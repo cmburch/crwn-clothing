@@ -18,8 +18,9 @@ export const LogoContainer = styled(Link)`
 export const NavLinks = styled.div`
   width: 50%;
   height: 100%;
+  min-width:250px;
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: flex-end;
 `;
 

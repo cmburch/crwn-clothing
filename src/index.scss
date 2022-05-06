@@ -4,6 +4,10 @@ body {
   font-family: 'Open Sans Condensed', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media screen and (max-width: 375px) {
+    padding: 8px 8px;
+  }
 }
 
 code {
@@ -19,3 +23,5 @@ a {
 * {
   box-sizing: border-box;
 }
+
+

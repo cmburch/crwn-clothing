@@ -13,6 +13,9 @@ export const PaymentFormContainer = styled.div`
 export const FormContainer = styled.form`
   height: 100px;
   min-width: 500px;
+  @media screen and (max-width: 767px) {
+    min-width: 250px;
+  }
 `;
 
 export const PaymentButton = styled(Button)`
