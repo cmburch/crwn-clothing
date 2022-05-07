@@ -23,6 +23,12 @@ export const ProductCartContainer = styled.div`
     display: none;
   }
 
+  @media screen and (max-width: 800px) {
+    button {
+      display: block;
+    }
+  }
+
   &:hover {
     img {
       opacity: 0.8;
