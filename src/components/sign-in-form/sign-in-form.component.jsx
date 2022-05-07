@@ -1,6 +1,8 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectCurrentUser } from '../../store/user/user.selector';
 
+import { useNavigate } from 'react-router-dom';
 import FormInput from '../form-input/form-input.component';
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 
@@ -17,6 +19,8 @@ const defaultFormFields = {
 
 const SignInForm = () => {
   const dispatch = useDispatch();
+  const currentUser = useSelector(selectCurrentUser);
+  const navigate = useNavigate();
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
@@ -44,6 +48,11 @@ const SignInForm = () => {
 
     setFormFields({ ...formFields, [name]: value });
   };
+
+  useEffect(() => {
+    console.log('currentUser: ',currentUser);
+    if(currentUser) navigate('/');
+  }, [currentUser]);
 
   return (
     <SignInContainer>
